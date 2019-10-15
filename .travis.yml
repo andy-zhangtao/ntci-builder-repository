@@ -1,0 +1,20 @@
+language: go
+
+go:
+  - 1.13.1
+
+env:
+  global:
+    - NTCI_IMG_NAME=vikings/ntci-base
+
+services:
+  - docker
+
+before_install:
+  - echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
+
+install:
+  - docker build -t ${NTCI_IMG_NAME}-go:latest -f golang/Dockerfile.latest .
+
+after_script:
+  - docker push ${NTCI_IMG_NAME}-go:latest
