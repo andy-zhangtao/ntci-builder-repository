@@ -8,3 +8,7 @@ Valid Language is belowing:
 1. [Golang]
 
     * go:latest
+
+2. [generic]
+
+    * ubuntu:latest
