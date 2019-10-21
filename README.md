@@ -3,6 +3,12 @@ All NTCI Builder Docker Base Image
 
 All base image has a common name: `vikings/ntci-base`. Language as a suffix after this name, like `go`, it's name is `vikings/ntci-base-go:[tag]`.
 
+## Require Tool
+
+* git
+* docker
+
+
 Valid Language is belowing:
 
 1. [Golang]
@@ -15,4 +21,4 @@ Valid Language is belowing:
 
 3. [node]
 
-    * 
+    *
