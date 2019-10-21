@@ -12,3 +12,7 @@ Valid Language is belowing:
 2. [generic]
 
     * ubuntu:latest
+
+3. [node]
+
+    * 
