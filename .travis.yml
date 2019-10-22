@@ -11,10 +11,12 @@ before_install:
   - echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
 
 install:
+  - docker build -t ${NTCI_IMG_NAME}:ubuntu -f base/Dockerfile .
   - docker build -t ${NTCI_IMG_NAME}-go:latest -f golang/Dockerfile.latest .
   - docker build -t ${NTCI_IMG_NAME}-generic:ubuntu -f generic/Dockerfile.ubuntu .
   - docker build -t ${NTCI_IMG_NAME}-node:yarn -f node/Dockerfile.yarn .
 after_script:
+  - docker push ${NTCI_IMG_NAME}:ubuntu
   - docker push ${NTCI_IMG_NAME}-go:latest
   - docker push ${NTCI_IMG_NAME}-generic:ubuntu
   - docker push ${NTCI_IMG_NAME}-node:yarn
