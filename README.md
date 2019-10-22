@@ -5,7 +5,7 @@ All base image has a common name: `vikings/ntci-base`. Language as a suffix afte
 
 ## BaseImage
 
-There has a base image. It base on ubuntu, install `docker`, `curl`, `git` and `wget`.
+There has a common base image. It base on ubuntu, install `docker`, `curl`, `git` and `wget`.
 
 If you wants to build your image, there are two tool must install.
 
@@ -17,14 +17,19 @@ If you wants to build your image, there are two tool must install.
 The belowing is valid language and its image:
 ## Valid Language:
 
-1. [Golang]
+1. [base]
+
+    * vikings/ntci-base:ubuntu
+
+2. [Golang]
 
     * go:latest
 
-2. [generic]
+3. [generic]
+    > use `vikings/ntci-base:ubuntu` instead
 
     * ubuntu:latest
 
-3. [node]
+4. [node]
 
     * node:yarn
