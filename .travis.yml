@@ -15,8 +15,12 @@ install:
   - docker build -t ${NTCI_IMG_NAME}-go:latest -f golang/Dockerfile.latest .
   - docker build -t ${NTCI_IMG_NAME}-go:pcap -f golang/Dockerfile.pcap .
   - docker build -t ${NTCI_IMG_NAME}-node:yarn -f node/Dockerfile.yarn .
+  - docker build -t ${NTCI_IMG_NAME}-java:maven-3-jdk8 -f java/Dockerfile.maven.3.jdk.8 .
+  - docker build -t ${NTCI_IMG_NAME}-java:grade-5-jre8 -f java/Dockerfile.grade.5.jre.8 .
 after_script:
   - docker push ${NTCI_IMG_NAME}:ubuntu
   - docker push ${NTCI_IMG_NAME}-go:latest
   - docker push ${NTCI_IMG_NAME}-go:pcap
   - docker push ${NTCI_IMG_NAME}-node:yarn
+  - docker push ${NTCI_IMG_NAME}-java:grade-5-jre8
+  - docker push ${NTCI_IMG_NAME}-java:maven-3-jdk8
