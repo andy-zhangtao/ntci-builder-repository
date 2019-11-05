@@ -24,6 +24,7 @@ The belowing is valid language and its image:
 2. [Golang]
 
     * go:latest
+    * go:pcap
 
 3. [generic]
     > use `vikings/ntci-base:ubuntu` instead
